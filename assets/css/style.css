@@ -1,0 +1,1371 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Public Sans', sans-serif;
+    background: #fff;
+    color: #000;
+}
+
+html {
+    scroll-padding-top: 90px;
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #ccc;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #205306;
+}
+::selection {
+    background: #205306;
+    color: #fff;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+ul {
+    list-style: none;
+}
+
+p {
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 175%;
+    color: #000;
+    text-transform: capitalize;
+}
+
+a,
+.nav-link {
+    text-decoration: none;
+    transition: 0.2s linear;
+}
+
+.primary-btn {
+    border-radius: 10px;
+    border: 1px solid #1D6B33;
+    padding: 4px;
+}
+
+.primary-btn span {
+    display: inline-block;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: normal;
+    text-transform: capitalize;
+    border: 0;
+    padding: 13px 26px;
+    border-radius: 10px;
+    color: #fff;
+    background: #1B6A31;
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.50) inset;
+    transition: 0.2s linear;
+}
+
+.section-title {
+    font-size: 64px;
+    font-weight: 900;
+    line-height: normal;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+}
+
+.section-desc {
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 1.6;
+    color: #000;
+    text-transform: capitalize;
+}
+
+/* loader */
+.loader-wrapper {
+    width: 100%;
+    z-index: 9999;
+    height: 100vh;
+    display: flex;
+}
+
+.loader {
+    width: 151px;
+    height: 165px;
+}
+
+.loader:before, .loader:after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: url('../images/buck-wing.png');
+    background-repeat: no-repeat;
+}
+
+.loader:after {
+    animation: pulse 1s infinite;
+    transform: perspective(336px) translateZ(0px);
+}
+
+@keyframes pulse {
+    100% {
+        transform: perspective(336px) translateZ(168px);
+        opacity: 0;
+    }
+}
+
+/* Header */
+header {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    z-index: 999;
+    padding-block: 20px;
+    transition: 0.2s linear;
+}
+
+header.fixed {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    background: #fff;
+    transition: 0.2s linear;
+}
+
+.navbar-collapse {
+    flex-grow: 0;
+}
+
+.navbar {
+    padding: 0;
+}
+
+#navbar-right .navbar-nav {
+    gap: 16px;
+}
+
+#navbar-right .navbar-nav .nav-link {
+    font-size: 20px;
+    font-weight: 600;
+    line-height: normal;
+    color: #000;
+    padding: 10px;
+    text-transform: capitalize;
+}
+
+#navbar-right .navbar-nav .nav-link:focus,
+#navbar-right .navbar-nav .nav-link:hover,
+#navbar-right .navbar-nav .nav-link.active {
+    color: #1B6A31;
+}
+
+a.dropdown-item {
+    font-size: 18px;
+    line-height: 1.7;
+    font-weight: 700;
+    padding: 10px;
+    color: #141414;
+    text-transform: uppercase;
+}
+
+.toggle-menu-icon {
+    width: 24px;
+    height: 20px;
+    display: inline-block;
+    position: relative;
+    margin: 0;
+    transform: rotate(0deg);
+    transition: .5s ease-in-out;
+    cursor: pointer;
+}
+
+.toggle-menu-icon span {
+    display: block;
+    position: absolute;
+    height: 3px;
+    width: 100%;
+    border-radius: 9px;
+    opacity: 1;
+    left: 0;
+    transform: rotate(0deg);
+    transition: .25s ease-in-out;
+    background: #000;
+}
+
+.toggle-menu-icon span:nth-child(1) {
+    top: 2px;
+}
+
+.toggle-menu-icon span:nth-child(2),
+.toggle-menu-icon span:nth-child(3) {
+    top: 10px;
+}
+
+.toggle-menu-icon span:nth-child(4) {
+    top: 18px;
+}
+
+.toggle-menu-icon.open span:nth-child(1) {
+    top: 11px;
+    width: 0%;
+    left: 50%;
+}
+
+.toggle-menu-icon.open span:nth-child(2) {
+    transform: rotate(45deg);
+}
+
+.toggle-menu-icon.open span:nth-child(3) {
+    transform: rotate(-45deg);
+}
+
+.toggle-menu-icon.open span:nth-child(4) {
+    top: 11px;
+    width: 0%;
+    left: 50%;
+}
+
+.navbar-toggler:focus,
+button:focus {
+    box-shadow: none;
+}
+
+.header-line {
+    bottom: -30px;
+}
+
+/* Banner */
+.banner {
+    position: relative;
+    background: url('../images/banner-bg.png') no-repeat;
+    padding-block: 230px 520px;
+    background-size: cover;
+}
+
+.banner h1 {
+    font-size: 84px;
+    font-weight: 800;
+    line-height: 1.2;
+    text-transform: capitalize;
+    margin-bottom: 16px;
+}
+
+.banner p {
+    max-width: 646px;
+    color: #8D8D8D;
+    margin: 0 auto 40px;
+}
+
+/* Counter */
+.counter {
+    padding-block: 120px;
+    margin-top: -20px;
+    background: linear-gradient(180deg, #B1E7FF 0%, #F7FDFF 71%, #FFF 100%);
+}
+
+.counter-card {
+    background: url('../images/counter-elem.png') no-repeat;
+    background-size: contain;
+    padding: 20px;
+    text-align: center;
+    width: 459px;
+    height: 282.87px;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.counter-card h5 {
+    font-size: 32px;
+    font-weight: 600;
+    line-height: normal;
+    color: #fff;
+    text-transform: capitalize;
+    margin-bottom: 12px;
+}
+
+.counter-card p {
+    font-size: 74px;
+    font-weight: 900;
+    line-height: normal;
+    letter-spacing: 1.48px;
+    -webkit-text-stroke: 3px #fff;
+    -webkit-text-fill-color: #1B6A31;
+    text-transform: uppercase;
+}
+
+/* About */
+.about-us {
+    padding-block: 140px 400px;
+    background: url('../images/about-bg.png') no-repeat;
+    position: relative;
+}
+
+.about-us::before {
+    content: '';
+    position: absolute;
+    top: -80px;
+    background: url('../images/cloud.png');
+    width: 100%;
+    height: 108px;
+    left: 0;
+}
+
+.about-content span {
+    font-size: 36px;
+    font-weight: 600;
+    line-height: normal;
+    text-transform: uppercase;
+}
+
+.social-media a {
+    border-radius: 9.358px;
+    border: 1.56px solid var(--2, #000);
+    height: 80px;
+    width: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/*  */
+.section-divider {
+    margin-block: -70px;
+}
+
+/* Tokenomic */
+.tokenomic {
+    padding-block: 150px;
+    background: linear-gradient(180deg, #B1E7FF 0%, #FFF 71%, #FFF 100%);
+}
+
+.tokenomic-icon {
+    width: 110px;
+    height: 110px;
+    border-radius: 110px;
+    background: #232323;
+    display: grid;
+    place-content: center;
+    margin: 12px auto;
+}
+
+.tokenomic-card {
+    background: url('../images/tokenomic-elem.png') no-repeat;
+    background-size: contain;
+    padding: 20px 94px;
+    text-align: center;
+    width: 486px;
+    height: 482px;
+    flex-shrink: 0;
+    display: grid;
+    place-content: center;
+}
+
+.tokenomic-card h5 {
+    font-size: 32px;
+    font-weight: 600;
+    color: #fff;
+    line-height: normal;
+    text-transform: capitalize;
+}
+
+.tokenomic-card p {
+    color: rgb(255, 255, 255, 0.8);
+    line-height: 1.2;
+}
+
+/* Why Buy */
+.why-buy {
+    background: url('../images/why-buy.png') no-repeat;
+    background-size: cover;
+    padding-block: 160px 280px;
+    background-position: bottom;
+}
+
+.why-buy p {
+    margin-bottom: 30px;
+}
+
+/* Ecosystem */
+.ecosystem {
+    padding-block: 120px 100px;
+    background: linear-gradient(180deg, #FFF 0%, #B1E7FF 103.29%), lightgray 0px -16.663px / 100% 97.317% no-repeat;
+}
+
+.ecosystem .badge {
+    font-size: 22px;
+    font-weight: 500;
+    text-transform: capitalize;
+    padding: 16px 24px;
+    border-radius: 8px;
+    background: #1B6A31;
+    color: #fff;
+}
+
+/* Roadmap */
+.roadmap .title-group p {
+    max-width: 759px;
+    margin-inline: auto;
+}
+
+.roadmap {
+    background: linear-gradient(180deg, #B1E7FF 0%, #FFF 103.29%);
+    padding-block: 100px 50px;
+}
+
+.roadmap-card {
+    background: url('../images/roadmap-elem-1.png') no-repeat;
+    background-size: contain;
+    padding: 20px 94px;
+    width: 691px;
+    height: 394px;
+    flex-shrink: 0;
+    display: grid;
+    place-content: center;
+    position: relative;
+}
+
+.roadmap-card-2 {
+    background: url('../images/roadmap-elem-2.png') no-repeat;
+    background-size: contain;
+    width: 705px;
+    height: 441px;
+}
+
+.roadmap-card h5 {
+    color: #fff;
+    text-align: center;
+    text-shadow: 0px 2px 0px #000;
+    font-size: 28px;
+    font-weight: 900;
+    line-height: normal;
+    letter-spacing: 1.12px;
+    text-transform: uppercase;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 24px;
+}
+
+.roadmap-card-2 h5 {
+    top: 32px;
+}
+
+.roadmap-card ul {
+    margin-top: 40px;
+    list-style: outside;
+    color: #fff;
+}
+
+.roadmap-card ul li {
+    font-size: 24px;
+    font-weight: 800;
+    line-height: 1.5;
+    -webkit-text-stroke: 1.5px #572A15;
+    -webkit-text-fill-color: #fff;
+    text-transform: capitalize;
+    margin-bottom: 12px;
+}
+
+/* FAQ */
+.faq {
+    background: url('../images/faq-bg.png') no-repeat;
+    background-size: cover;
+    padding-block: 446px 286px;
+    background-position: center;
+}
+
+.faq p {
+    max-width: 776px;
+    margin: 0 auto;
+}
+
+.faq-accordion {
+    margin-top: 60px;
+}
+
+.faq-accordion .accordion-item {
+    margin-bottom: 28px;
+    border-radius: 16px;
+    background: linear-gradient(90deg, #93DEFF 0%, #EEFAFF 100%);
+    border: 0;
+}
+
+.faq-accordion .accordion-item button {
+    background: transparent;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 35px;
+    text-transform: capitalize;
+    box-shadow: none;
+    padding: 28px;
+    color: #000;
+}
+
+.accordion-button::after {
+    background-image: url("../images/plus.png");
+    transform: none;
+}
+
+.accordion-button:not(.collapsed)::after {
+    background-image: url("../images/minus.png");
+    transform: none;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    background: linear-gradient(180deg, #FFF 0%, #B1E7FF 103.29%);
+}
+
+.footer-top {
+    padding-block: 100px 40px;
+}
+
+.footer-link {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: end;
+    gap: 16px;
+    margin-bottom: 28px;
+}
+
+.footer-link .nav-link {
+    font-size: 20px;
+    color: #000;
+    font-weight: 700;
+    line-height: normal;
+    padding: 10px;
+    text-transform: capitalize;
+}
+
+.footer-bottom {
+    padding-block: 15px;
+    background: #010101;
+    text-align: center;
+}
+
+.footer-bottom p {
+    font-size: 18px;
+    text-transform: uppercase;
+    color: #fff;
+}
+
+@media (min-width: 1500px) {
+    .container {
+        max-width: 1464px;
+    }
+}
+
+@media (max-width: 1750px) {
+    .div-center {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 1500px) {
+    p {
+        font-size: 18px;
+    }
+
+    .section-title {
+        font-size: 50px;
+        margin-bottom: 20px;
+    }
+
+    .banner {
+        padding-block: 160px 400px;
+    }
+
+    .banner h1 {
+        font-size: 70px;
+    }
+
+    .about-content span {
+        font-size: 30px;
+    }
+
+    .counter {
+        padding-block: 80px;
+    }
+
+    .counter-card {
+        width: 420px;
+        height: 260px;
+    }
+
+    .footer-link {
+        gap: 10px;
+        margin-bottom: 20px;
+    }
+
+    .about-us {
+        padding-block: 110px 240px;
+        background-position: bottom;
+        background-size: cover;
+    }
+
+    .div-center {
+        justify-content: start;
+    }
+
+    .tokenomic {
+        padding-block: 120px;
+    }
+
+    .tokenomic-card p {
+        font-size: 16px;
+    }
+
+    .tokenomic-card {
+        padding: 0px 90px;
+        width: 436px;
+        height: 431px;
+    }
+
+    .tokenomic-card h5 {
+        font-size: 24px;
+    }
+
+    .tokenomic-icon {
+        width: 80px;
+        height: 80px;
+        margin: 6px auto;
+    }
+
+    .tokenomic-icon img {
+        width: 50px;
+    }
+
+    .roadmap-card {
+        width: 600px;
+        height: 350px;
+    }
+
+    .roadmap-card-2 {
+        width: 600px;
+        height: 375px;
+    }
+
+    .why-buy {
+        padding-block: 140px;
+    }
+
+    .ecosystem {
+        padding-block: 80px;
+    }
+
+    .roadmap {
+        padding-block: 60px 50px;
+    }
+
+    .faq {
+        padding-block: 356px 266px;
+    }
+
+    .faq-accordion .accordion-item button {
+        font-size: 20px;
+        line-height: 1.5;
+        padding: 20px;
+    }
+
+    .faq-accordion {
+        margin-top: 40px;
+    }
+
+    .footer-top {
+        padding-block: 40px;
+    }
+}
+
+@media (max-width: 1400px) {
+    .section-title {
+        font-size: 44px;
+    }
+
+    .section-desc {
+        font-size: 22px;
+    }
+
+    .buy-btn {
+        padding: 12px 25px;
+    }
+
+    #navbar-right .navbar-nav {
+        gap: 10px;
+    }
+
+    #navbar-right .navbar-nav .nav-link {
+        font-size: 16px;
+        padding-inline: 10px;
+        font-weight: 600;
+    }
+
+    /*  */
+    .banner {
+        padding-block: 190px 360px;
+    }
+
+    .banner h1 {
+        font-size: 60px;
+    }
+
+    .banner p {
+        margin: 0 auto 20px;
+    }
+
+    .counter-card {
+        width: 370px;
+        height: 228px;
+    }
+
+    .counter-card h5 {
+        font-size: 24px;
+    }
+
+    .counter-card p {
+        font-size: 40px;
+        -webkit-text-stroke: 2px #fff;
+    }
+
+    .about-us {
+        padding-block: 140px 230px;
+    }
+
+    .roadmap-card {
+        width: 550px;
+        height: 344px;
+    }
+
+    .roadmap-card h5 {
+        font-size: 24px;
+        top: 18px;
+    }
+
+    .roadmap-card-2 h5 {
+        top: 24px;
+    }
+
+    .roadmap-card ul li {
+        font-size: 22px;
+        margin-bottom: 8px;
+    }
+
+    .social-media a {
+        height: 60px;
+        width: 60px;
+    }
+
+    .social-media a img {
+        height: 40px;
+    }
+
+    .why-buy-right {
+        max-width: 80%;
+    }
+
+    .why-buy {
+        padding-block: 140px 220px;
+    }
+
+    .ecosystem .badge {
+        font-size: 20px;
+        padding: 12px 16px;
+    }
+
+    .faq {
+        padding-block: 346px 240px;
+    }
+}
+
+@media (max-width: 1199px) {
+    p {
+        line-height: 1.6;
+    }
+
+    .section-desc {
+        font-size: 20px;
+    }
+
+    .section-title {
+        font-size: 44px;
+    }
+
+    #navbar-right .navbar-nav {
+        gap: 0;
+        max-width: 960px;
+        margin: 0 auto;
+        padding-block: 20px 10px;
+    }
+
+    .navbar-collapse {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background: #fff;
+        width: 100%;
+    }
+
+    .navbar-brand img {
+        max-width: 180px;
+    }
+
+    .footer-link .nav-link {
+        font-size: 16px;
+        padding: 10px 4px;
+    }
+
+    .counter-card {
+        width: 420px;
+        height: 259px;
+    }
+
+    .banner {
+        padding-block: 130px 340px;
+        background-position: center;
+    }
+
+    .banner h1 {
+        font-size: 55px;
+        margin-bottom: 30px;
+    }
+
+    .counter {
+        padding-block: 80px;
+    }
+
+    .about-left {
+        height: 350px;
+    }
+
+    .about-content {
+        text-align: center;
+    }
+
+    .social-media {
+        justify-content: center;
+    }
+
+    .social-media a {
+        height: 60px;
+        width: 60px;
+    }
+
+    .about-content span {
+        font-size: 22px;
+    }
+
+    .roadmap-card {
+        width: 450px;
+        height: 258px;
+    }
+
+    .roadmap-card-2 {
+        width: 450px;
+        height: 283px;
+    }
+
+    .roadmap-card ul li {
+        font-size: 18px;
+        line-height: 1.2;
+        -webkit-text-stroke: 1px #572A15;
+        margin-bottom: 6px;
+    }
+
+    .roadmap-card h5 {
+        font-size: 18px;
+        top: 16px;
+    }
+
+    .roadmap-card-2 h5 {
+        top: 18px;
+    }
+
+    .primary-btn span {
+        font-size: 16px;
+        padding: 12px 20px;
+    }
+
+    .about-us {
+        padding-block: 100px 120px;
+        background: linear-gradient(180deg, #f9dfa4 0%, #FFF 71%, #FFF 100%);
+    }
+
+    .section-divider {
+        margin-block: -42px;
+    }
+
+    .tokenomic {
+        padding-block: 100px;
+    }
+
+    .why-buy {
+        padding-block: 100px 200px;
+    }
+
+    .faq {
+        padding-block: 290px 140px;
+    }
+
+    .ecosystem {
+        padding-block: 70px;
+    }
+}
+
+@media (max-width: 991px) {
+    p {
+        font-size: 18px;
+        line-height: 1.6;
+    }
+
+    .primary-btn span {
+        font-size: 16px;
+        padding: 10px 24px;
+    }
+
+    .section-title {
+        font-size: 32px;
+    }
+
+    #navbar-right .navbar-nav {
+        gap: 0;
+        max-width: 720px;
+    }
+
+    #navbar-right .navbar-nav .nav-link {
+        padding: 8px 20px;
+    }
+
+    .dropdown-menu {
+        padding: .5rem 15px;
+        background-color: transparent;
+        border: 0;
+    }
+
+    a.dropdown-item {
+        font-size: 14px;
+        font-weight: 500;
+        color: #fff;
+    }
+
+
+    header {
+        padding-block: 12px;
+    }
+
+    .header-line {
+        bottom: -20px;
+    }
+
+    .footer-bottom p {
+        font-size: 16px;
+    }
+
+    .footer-link {
+        justify-content: center;
+    }
+
+    /*  */
+    .banner h1 {
+        font-size: 40px;
+        margin-bottom: 6px;
+    }
+
+    .banner p {
+        font-size: 16px;
+        margin-bottom: 20px;
+    }
+
+    .about-us {
+        padding-block: 100px;
+        background: linear-gradient(180deg, #B1E7FF 0%, #FFF 71%, #FFF 100%);
+    }
+
+    .section-divider {
+        margin-block: -28px;
+    }
+
+    .why-buy {
+        background-position: left;
+    }
+
+    .ecosystem img,
+    .about-left {
+        height: 280px;
+    }
+
+    .about-us {
+        padding-block: 80px;
+    }
+
+    .tokenomic {
+        padding-block: 70px;
+    }
+
+    .ecosystem {
+        padding-block: 60px;
+    }
+
+    .roadmap {
+        padding-block: 50px;
+    }
+
+    .faq {
+        padding-block: 270px 80px;
+    }
+
+    .faq-accordion .accordion-item button {
+        font-size: 18px;
+        padding: 16px;
+    }
+}
+
+@media (max-width: 767px) {
+    p {
+        font-size: 18px;
+    }
+
+    .section-title {
+        font-size: 30px;
+        margin-bottom: 15px;
+    }
+
+    .footer-link {
+        flex-direction: column;
+    }
+
+    #navbar-right .navbar-nav {
+        max-width: 540px;
+    }
+
+    .about-left {
+        height: 230px;
+    }
+
+    .about-content span {
+        font-size: 18px;
+    }
+
+    .roadmap-card {
+        width: 500px;
+        height: 285px;
+    }
+
+    .roadmap-card-2 {
+        width: 500px;
+        height: 316px;
+    }
+
+    .roadmap-card ul li {
+        font-size: 20px;
+        -webkit-text-stroke: 1px #572A15;
+        margin-bottom: 2px;
+    }
+
+    .roadmap-card h5 {
+        font-size: 22px;
+        top: 16px;
+    }
+
+    .roadmap-card-2 h5 {
+        top: 20px;
+    }
+
+    .banner {
+        padding-block: 110px 260px;
+    }
+
+    .banner h1 {
+        font-size: 34px;
+    }
+
+    .about-us,
+    .counter {
+        padding-block: 60px;
+    }
+
+    .why-buy {
+        padding-block: 70px 120px;
+    }
+
+    .faq {
+        padding-block: 260px 60px;
+    }
+
+    .faq-accordion {
+        margin-top: 20px;
+    }
+
+    .faq-accordion .accordion-item {
+        margin-bottom: 16px;
+        border-radius: 12px;
+    }
+
+    .footer-link .nav-link {
+        font-size: 18px;
+        padding: 4px;
+    }
+}
+
+@media (max-width: 576px) {
+    .primary-btn span {
+        font-size: 14px;
+        padding: 8px 20px;
+    }
+
+    .section-desc,
+    p {
+        font-size: 16px;
+        line-height: 1.6;
+    }
+
+    header .primary-btn span {
+        font-size: 14px;
+        padding: 8px 12px;
+    }
+
+    .section-title {
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+
+    .navbar-brand img {
+        max-width: 120px;
+    }
+
+    .footer-top {
+        padding-block: 60px 20px;
+    }
+
+    .footer-link {
+        gap: 5px;
+        margin-bottom: 20px;
+    }
+
+    .footer-link .nav-link {
+        padding: 8px 20px;
+    }
+
+    .footer-bottom p {
+        font-size: 14px;
+    }
+
+    .footer-brand img {
+        width: 170px;
+    }
+
+    /*  */
+    .banner {
+        padding-block: 100px 230px;
+    }
+
+    .banner h1 {
+        font-size: 30px;
+        margin-bottom: 16px;
+    }
+
+    .counter {
+        padding-block: 60px;
+    }
+
+    .about-us {
+        padding-block: 40px;
+    }
+
+    .social-media a {
+        height: 40px;
+        width: 40px;
+    }
+
+    .social-media a img {
+        height: 30px;
+    }
+
+    .roadmap-card {
+        padding: 10px 20px;
+        width: 414px;
+        height: 236px;
+    }
+
+    .roadmap-card-2 {
+        padding: 10px 20px;
+        width: 414px;
+        height: 260px;
+    }
+
+    .roadmap-card ul {
+        margin-top: 30px;
+    }
+
+    .roadmap-card ul li {
+        font-size: 16px;
+        margin-bottom: 6px;
+    }
+
+    .roadmap-card h5 {
+        font-size: 18px;
+        top: 16px;
+    }
+
+    .roadmap-card-2 h5 {
+        top: 20px;
+    }
+
+    .ecosystem {
+        padding-block: 40px;
+    }
+
+    .why-buy {
+        padding-block: 50px 90px;
+    }
+
+    .board img {
+        width: 80%;
+    }
+
+    .faq {
+        padding-block: 200px 40px;
+    }
+
+    .faq-accordion .accordion-item button {
+        font-size: 16px;
+        padding: 12px 16px;
+    }
+
+    .roadmap {
+        padding-block: 50px 20px;
+    }
+}
+
+@media (max-width: 440px) {
+    .banner {
+        padding-block: 100px 200px;
+    }
+
+    .banner h1 {
+        font-size: 26px;
+        margin-bottom: 10px;
+    }
+
+    .counter-card {
+        width: 300px;
+        height: 185px;
+    }
+
+    .counter-card h5 {
+        font-size: 20px;
+    }
+
+    .counter-card p {
+        font-size: 35px;
+    }
+
+    .tokenomic-card {
+        padding: 0px 58px;
+        width: 318px;
+        height: 315px;
+    }
+
+    .tokenomic-icon {
+        width: 50px;
+        height: 50px;
+    }
+
+    .tokenomic-icon img {
+        width: 30px;
+    }
+
+    .tokenomic-card h5 {
+        font-size: 20px;
+    }
+
+    .tokenomic-card p {
+        font-size: 14px;
+    }
+
+    .roadmap-card {
+        padding: 10px 20px;
+        width: 310px;
+        height: 177px;
+    }
+
+    .roadmap-card-2 {
+        padding: 10px 20px;
+        width: 310px;
+        height: 194px;
+    }
+
+    .roadmap-card ul {
+        margin-top: 30px;
+        padding-left: 30px;
+    }
+
+    .roadmap-card ul li {
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 1;
+        -webkit-text-stroke: 0;
+        margin-bottom: 4px;
+    }
+
+    .roadmap-card h5 {
+        font-size: 14px;
+        letter-spacing: 0.5px;
+        top: 10px;
+    }
+
+    .roadmap-card-2 h5 {
+        top: 13px;
+    }
+
+    .about-us::before {
+        top: -30px;
+        height: 60px;
+        background-size: cover;
+    }
+
+    .section-divider {
+        margin-block: -18px;
+    }
+
+    .ecosystem .badge {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    .roadmap {
+        padding-block: 20px;
+    }
+
+    .faq {
+        padding-block: 40px;
+        background: #fff;
+    }
+
+    .accordion-button::after {
+        width: 12px;
+        height: 12px;
+        background-size: 12px;
+    }
+
+    .footer-top {
+        padding-block: 30px 20px;
+    }
+}
